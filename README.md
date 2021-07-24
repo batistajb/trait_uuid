@@ -1,5 +1,8 @@
 # trait_uuid
 Trait UUID - Laravel
+
+Crie uma pasta com nome de "Traits" dentro da pasta app. Depois na pasta crie a classe trait abaixo.
+
 ```
 <?php
 
@@ -36,5 +39,17 @@ trait HasPrimaryKeyUuid
     {
         return 'string';
     }
+}
+```
+
+Agora é só importar no model e ser feliz :)
+
+
+```
+class Cliente extends Model
+{
+    use HasFactory, HasPrimaryKeyUuid;
+    protected $table = 'clientes';
+    
 }
 ```
