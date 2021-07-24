@@ -1,6 +1,6 @@
 # trait_uuid
 Trait UUID - Laravel
-
+```
 <?php
 
 namespace App\Traits;
@@ -37,4 +37,4 @@ trait HasPrimaryKeyUuid
         return 'string';
     }
 }
-
+```
