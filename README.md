@@ -53,3 +53,6 @@ class Cliente extends Model
     
 }
 ```
+
+
+https://www.youtube.com/watch?v=7N2mFbKhq_M 
