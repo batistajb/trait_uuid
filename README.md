@@ -51,7 +51,6 @@ Lembre-se de ajustar seu banco de dados(migration).
 public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
             $table->uuid('uuid')->primary(); // Aqui
             $table->string('name');
             $table->string('email')->unique();
@@ -66,10 +65,10 @@ public function up()
 
 
 ```
-class Cliente extends Model
+class User extends Model
 {
     use HasFactory, HasPrimaryKeyUuid;
-    protected $table = 'clientes';
+    protected $table = 'users';
     
 }
 ```
@@ -79,10 +78,10 @@ Agora é só importar no model e ser feliz :)
 
 
 ```
-class Cliente extends Model
+class User extends Model
 {
     use HasFactory, HasPrimaryKeyUuid;
-    protected $table = 'clientes';
+    protected $table = 'users';
     
 }
 ```
