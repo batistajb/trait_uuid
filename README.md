@@ -42,6 +42,39 @@ trait HasPrimaryKeyUuid
 }
 ```
 
+
+
+Lembre-se de ajustar seu banco de dados(migration).
+
+
+```
+public function up()
+    {
+        Schema::create('users', function (Blueprint $table) {
+            $table->id();
+            $table->uuid('uuid')->primary(); // Aqui
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->rememberToken();
+            $table->timestamps();
+        });
+    }
+
+```
+
+
+```
+class Cliente extends Model
+{
+    use HasFactory, HasPrimaryKeyUuid;
+    protected $table = 'clientes';
+    
+}
+```
+
+
 Agora é só importar no model e ser feliz :)
 
 
